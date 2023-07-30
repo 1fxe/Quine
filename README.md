@@ -1,54 +1,14 @@
 # Quine
 
-Simple Java Quine
+Simple Java Quine using String Literals
 
-> A quine is a self-referential program that can, without any external access, output its own source." [Definition](https://rosettacode.org/wiki/Quine)
+> A quine is a self-referential program that can, without any external access, output its own source. [Definition](https://rosettacode.org/wiki/Quine)
 
 ## Running
 
-`java src/Quine.class`
-
-## Code
-
-### Source
-```java
-public class Quine {
-	public static void main(String[] args) {
-		char q = 34;
-		char t = 9;
-		String s = """
-public class Quine {
-%spublic static void main(String[] args) {
-%s%schar q = 34;
-%s%schar t = 9;
-%s%sString s = %s%s%s
-%s%s%s%s;
-%s%sSystem.out.printf(s, t, t, t, t, t, t, t, q, q, q, s, q, q, q, t, t, t);
-%s}
-}""";
-		System.out.printf(s, t, t, t, t, t, t, t, q, q, q, s, q, q, q, t, t, t);
-	}
-}
-```
-
-
-### Output
-```java
-public class Quine {
-	public static void main(String[] args) {
-		char q = 34;
-		char t = 9;
-		String s = """
-public class Quine {
-%spublic static void main(String[] args) {
-%s%schar q = 34;
-%s%schar t = 9;
-%s%sString s = %s%s%s
-%s%s%s%s;
-%s%sSystem.out.printf(s, t, t, t, t, t, t, t, q, q, q, s, q, q, q, t, t, t);
-%s}
-}""";
-		System.out.printf(s, t, t, t, t, t, t, t, q, q, q, s, q, q, q, t, t, t);
-	}
-}
+```sh
+Quine …
+➜ java src/Quine.java > Quine2.java &&
+➜ diff -s -q src/Quine.java Quine2.java
+Files src/Quine.java and Quine2.java are identical
 ```
